@@ -6,8 +6,9 @@ import {
   ButtonDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
- } from 'reactstrap';
+  DropdownItem,
+  Dropdown
+} from 'reactstrap';
 
 const Example = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -26,9 +27,9 @@ const Example = (props) => {
       <br />
       <InputGroup>
         <Input />
-        <ButtonDropdown isOpen={dropdownOpen} toggle={toggleDropDown}>
+        <Dropdown isOpen={dropdownOpen} toggle={toggleDropDown}>
           <DropdownToggle caret>
-            Button Dropdown
+            Button Dropdown 1
           </DropdownToggle>
           <DropdownMenu>
             <DropdownItem header>Header</DropdownItem>
@@ -37,7 +38,7 @@ const Example = (props) => {
             <DropdownItem divider />
             <DropdownItem>Another Action</DropdownItem>
           </DropdownMenu>
-        </ButtonDropdown>
+        </Dropdown>
       </InputGroup>
       <br />
       <InputGroup>

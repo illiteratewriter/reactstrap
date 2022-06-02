@@ -1,5 +1,7 @@
 {
-  "extends": ["react-app"],
+  "extends": [
+    "airbnb"
+  ],
   "rules": {
     "react/forbid-foreign-prop-types": 0
   }
