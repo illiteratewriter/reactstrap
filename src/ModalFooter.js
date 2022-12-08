@@ -10,6 +10,11 @@ const propTypes = {
   cssModule: PropTypes.object,
   /** Set a custom element for this component */
   tag: tagPropType,
+  innerRef: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.string,
+    PropTypes.func,
+  ]),
 };
 
 const defaultProps = {
@@ -17,13 +22,13 @@ const defaultProps = {
 };
 
 function ModalFooter(props) {
-  const { className, cssModule, tag: Tag, ...attributes } = props;
+  const { className, cssModule, innerRef, tag: Tag, ...attributes } = props;
   const classes = mapToCssModules(
     classNames(className, 'modal-footer'),
     cssModule,
   );
 
-  return <Tag {...attributes} className={classes} />;
+  return <Tag {...attributes} className={classes} ref={innerRef} />;
 }
 
 ModalFooter.propTypes = propTypes;

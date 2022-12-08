@@ -10,19 +10,24 @@ const propTypes = {
   cssModule: PropTypes.object,
   /** Set a custom element for this component */
   tag: tagPropType,
+  innerRef: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.string,
+    PropTypes.func,
+  ]),
 };
 const defaultProps = {
   tag: 'div',
 };
 
 function ModalBody(props) {
-  const { className, cssModule, tag: Tag, ...attributes } = props;
+  const { className, cssModule, innerRef, tag: Tag, ...attributes } = props;
   const classes = mapToCssModules(
     classNames(className, 'modal-body'),
     cssModule,
   );
 
-  return <Tag {...attributes} className={classes} />;
+  return <Tag {...attributes} className={classes} ref={innerRef} />;
 }
 
 ModalBody.propTypes = propTypes;
