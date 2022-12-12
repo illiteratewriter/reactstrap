@@ -14,7 +14,7 @@
     "build:types:js": "scripts/copyDTSFiles.js",
     "build:esm": "babel src --out-dir esm --config-file ./babel.esm.config.js --extensions '.js,.ts,.tsx'",
     "build:lib": "babel src --out-dir lib --config-file ./babel.build.config.js --extensions '.js,.ts,.tsx'",
-    "build": "yarn clean && concurrently \"yarn:build:*\"",
+    "build": "yarn clean && concurrently \"yarn:build:*(!docs)\"",
     "version": "node_modules/.bin/conventional-changelog -i CHANGELOG.md -o CHANGELOG.md -p angular && git add -A CHANGELOG.md",
     "prepublishOnly": "npm run build",
     "create-release": "npm run cover && sh ./scripts/release",
